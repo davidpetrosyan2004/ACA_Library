@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+{% endblock %}
+{% block content %}
+    <style>body{background-image: url("../static/about_background.jpg");background-size: 1760px;background-repeat: no-repeat;}</style>
+    <div class="about-div">
+        <img class="about-img" src="{{ url_for('static', filename='about_img.png') }}" alt="">
+        <span class="border border-dark-4">
+            <span class="title">About Us</span><br>
+            Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Aspernatur eligendi excepturi id illum ipsum
+            itaque minus nihil nulla, numquam possimus quis quod ratione rem sed
+            sunt vel vero vitae voluptas! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            A aliquam architecto autem, cum deleniti dolore enim eos exercitationem fugit
+            illo laboriosam laborum modi non perferendis ratione sapiente sunt ullam veritatis!</span>
+    </div>
+{% endblock %}

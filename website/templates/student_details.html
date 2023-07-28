@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='student_details.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ student_data.username }} ({{ student_data.status }})</h2>
+          <p class="text-secondary">{{ student_data.email }}</p>
+        </div>
+      </div>
+      <h3>Account Info</h3>
+      <hr>
+        <table class="table">
+            <tbody>
+                <tr class="table-primary">
+                    <th scope="row">Username:</th>
+                    <td class="table-primary">{{ student_data.username }}</td>
+                </tr>
+                <tr class="table-primary">
+                    <th scope="row">Email:</th>
+                    <td class="table-primary">{{ student_data.email }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Card</h3>
+        <table class="table">
+            <thead>
+                <tr class="table-danger">
+                  <th scope="col">Title</th>
+                  <th scope="col">Borrowed date</th>
+                </tr>
+          </thead>
+            <tbody>
+                {% for copybook in student_data.card %}
+                    <tr class="table-primary">
+                        <th scope="row">{{ copybook.book.title }}</th>
+                        <td class="table-primary">{{ copybook.borrowed_date.today() }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

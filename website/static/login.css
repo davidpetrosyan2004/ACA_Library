@@ -1,0 +1,39 @@
+.login-block {
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+    padding-left: 10px;
+    width: 375px;
+    height: 350px;
+    margin-left: 500px;
+    margin-top: 100px;
+}
+
+.login-title {
+    margin-left: 140px;
+    font-size: 30px;
+    font-family: URW Chancery L, cursive;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.form-floating {
+    width: 350px;
+}
+
+.btn {
+    margin-top: 10px;
+    width: 350px;
+}
+
+.form-check-input{
+    margin-top: 5px;
+}
+
+.forget-button {
+    margin-left: 100px;
+}
+
+.sign_up-button {
+    margin-left: 290px;
+}

@@ -1,0 +1,18 @@
+{% macro error_display(errors, func, label=false, placeholder="Name") %}
+    {% if errors %}
+        {{ func(class="form-control is-invalid", placeholder=placeholder) }}
+        {% if label %}
+            {{ func.label(placeholder, for="floatingInput") }}
+        {% endif %}
+        <div class="invalid-feedback">
+            {% for error in errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+    {% else %}
+        {{ func(class="form-control", placeholder=placeholder) }}
+        {% if label %}
+            {{ func.label(placeholder, for="floatingInput") }}
+        {% endif %}
+    {% endif %}
+{% endmacro %}

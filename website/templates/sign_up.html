@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='sign_up.css') }}">
+{% endblock %}
+{% from 'macros.html' import error_display %}
+{% block content %}
+    <style>body {background-image: url("../static/background.jpg"); background-size: 1360px 900px; background-repeat: no-repeat}</style>
+    <form class="row" method="POST" action="">
+    {{ form.hidden_tag() }}
+        <div>
+            <div class="sign_up-title">
+                <p>Sign Up</p>
+            </div>
+            <div>
+                <div class="col">
+                    {{ error_display(form.first_name.errors,
+                                     func=form.first_name,
+                                     placeholder="First name") }}
+                </div>
+                <div class="col">
+                    {{ error_display(form.last_name.errors,
+                                     func=form.last_name,
+                                     placeholder="Last name") }}
+                </div>
+                <div class="col">
+                    {{ error_display(form.email.errors,
+                                     func=form.email,
+                                     placeholder="Email") }}
+                </div>
+                <div class="col">
+                    {{ error_display(form.password.errors,
+                                     func=form.password,
+                                     placeholder="Password") }}
+                </div>
+                <div class="col">
+                    {{ error_display(form.confirm_password.errors,
+                                     func=form.confirm_password,
+                                     placeholder="Confirm password") }}
+                </div>
+            </div>
+            <div>
+                {{ form.status(class='select-block form-control') }}
+            </div>
+            <div>
+                {{ form.submit(class="btn btn-primary", style="margin-top: 10px; width: 350px") }}
+            </div>
+        </div>
+    </form>
+{% endblock %}

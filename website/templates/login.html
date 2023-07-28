@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+{% endblock %}
+{% from 'macros.html' import error_display %}
+{% block content %}
+    <style>body {background-image: url("../static/background.jpg"); background-size: 1360px 900px; background-repeat: no-repeat}</style>
+    <form class="login-block" method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="login-title">
+            <p>Login</p>
+        </div>
+        <div class="form-floating mb-3">
+            {{ error_display(form.email.errors, form.email, label=true, placeholder='Email address') }}
+        </div>
+        <div class="form-floating">
+            {{ error_display(form.password.errors, form.password, label=true, placeholder='Password') }}
+        </div>
+        <div>
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+        <div>
+            {{ form.remember(class="form-check-input") }}
+            {{ form.remember.label(class="form-check-label") }}
+            <span class="forget-button"><a href="#">Forget password?</a></span>
+        </div>
+        <a href="/sign_up" class="sign_up-button">Sign Up</a>
+    </form>
+{% endblock %}

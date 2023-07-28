@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='students.css') }}">
+{% endblock %}
+{% block content %}
+    <table class="table" style="margin-top: 60px">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row, student in enumerate(students_data, start=1) %}
+            <tr>
+              <th scope="row">{{ row }}</th>
+              <td><a href="students/{{ student.id }}">{{ student.username }}</a></td>
+              <td>{{ student.email }}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}

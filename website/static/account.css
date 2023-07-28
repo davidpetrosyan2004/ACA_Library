@@ -1,0 +1,32 @@
+.content-section {
+    border:3px solid rgba(0, 0, 0, 0.1);
+    width: 700px;
+    margin-left: 300px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.media {
+    display: flex;
+}
+
+.media-body {
+    margin-left: 20px;
+}
+
+.btn {
+    margin-top: 20px;
+    width: 200px
+}
+
+.form-control {
+    margin-top: 5px;
+}
+
+.col {
+    margin-top: 10px;
+}
+
+.label {
+    font-family: Arial;
+}

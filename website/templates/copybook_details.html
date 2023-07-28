@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='book_details.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='copybook_details.css') }}">
+{% endblock %}
+{% block content %}
+    <style>body{background-image: url({{ url_for('static', filename='about_background.jpg') }});background-size: 1760px;background-repeat: no-repeat;}</style>
+    <div class="parent">
+        <div class="book-cover"><img src="{{ copybook.book.image_file }}" class="img-thumbnail" alt="..."></div>
+        <div>
+            <table class="table">
+                <tbody>
+                <tr class="table-primary">
+                    <th scope="row">Title</th>
+                    <td class="table-primary">{{ copybook.book.title }}</td>
+                </tr>
+                <tr class="table-primary">
+                    <th scope="row">Genre</th>
+                    <td class="table-primary">{{ copybook.book.genre }}</td>
+                </tr>
+                <tr class="table-primary">
+                    <th scope="row">Year</th>
+                    <td class="table-primary">{{ copybook.year_published }}</td>
+                </tr>
+                <tr class="table-primary">
+                    <th scope="row">ISBN</th>
+                    <td class="table-primary">{{ copybook.isbn_copy }}</td>
+                </tr>
+                <tr class="table-primary">
+                    <th scope="row">Borrowed date</th>
+                    <td class="table-primary">{{ copybook.borrowed_date }}</td>
+                </tr>
+                <tr class="table-primary">
+                    <th scope="row">Condition rating</th>
+                    <td class="table-primary">{{ copybook.condition_rating }}</td>
+                </tr>
+                </tbody>
+            </table>
+            <form method="POST" action="">
+                {% if current_user.status == 'Student' %}
+                    <td class="table-btn table-primary">
+                        <button type="submit" class="btn btn-primary disabled">Added</button>
+                    </td>
+                    <td>
+                        <form method="POST" action="">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

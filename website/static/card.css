@@ -1,0 +1,23 @@
+.card {
+    width: 14rem;
+    margin: 20px;
+}
+
+.card-div {
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 10px;
+}
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.btn {
+    width: 200px;
+}

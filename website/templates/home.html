@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="img-div">
+        <p class="img-text">
+            Welcome to the ACA's Library <br>
+            <span class="img-text-small">Here you can find any kind of book, that you want <br></span>
+            <button type="button" class="btn btn-outline-dark"><a href="/about">Read more</a></button>
+        </p>
+
+        <img src="{{ url_for('static', filename='home_page.jpg') }}" class="img-fluid" alt="...">
+    </div>
+    <hr>
+    <div class="div-p border border-4">
+        <span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, deleniti.
+        </span>
+        <span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid aut expedita neque numquam
+            tenetur.
+        </span>
+        <span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, perspiciatis.
+        </span>
+    </div>
+    <div class="divs-row">
+        {% include 'components/carousel.html' %}
+        {% include 'components/cards.html' %}
+    </div>
+    <p class="title">Books</p>
+    {% include 'components/object_fit.html' %}
+{% endblock %}

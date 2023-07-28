@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='book_details.css') }}">
+{% endblock %}
+{% block content %}
+    <style>body{background-image: url({{ url_for('static', filename='about_background.jpg') }});background-size: 1760px;background-repeat: no-repeat;}</style>
+    <div class="parent">
+        <div class="book-cover"><img src="{{ book.image_file }}" class="img-thumbnail" alt="..."></div>
+        <div>
+            <table class="table">
+                <tbody>
+                <tr class="table-primary">
+                    <th scope="row">Title</th>
+                    <td class="table-primary">{{ book.title }}</td>
+                </tr>
+                <tr class="table-primary">
+                    <th scope="row">Genre</th>
+                    <td class="table-primary">{{ book.genre }}</td>
+                </tr>
+                <tr class="table-primary">
+                    <th scope="row">Year</th>
+                    <td class="table-primary">{{ book.year_first_published }}</td>
+                </tr>
+                <tr class="table-primary">
+                    <th scope="row">ISBN</th>
+                    <td class="table-primary">{{ book.isbn }}</td>
+                </tr>
+                </tbody>
+            </table>
+            <form method="POST" action="">
+                {% if user.status == 'Student' %}
+                    {% if button_pushed %}
+                        <td class="table-btn table-primary">
+                            <button type="submit" class="btn btn-primary disabled">Added</button>
+                        </td>
+                    {% else %}
+                        <td class="table-btn table-primary">
+                            <button type="submit" class="btn btn-primary">Add to Card</button>
+                        </td>
+                    {% endif %}
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

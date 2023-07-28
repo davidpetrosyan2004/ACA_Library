@@ -1,0 +1,83 @@
+.img-text {
+    z-index:101;
+    position: absolute;
+    left: 400px;
+    top: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 40px;
+    color: white;
+    font-family: Arial;
+}
+
+.img-text-small {
+    font-size: 20px;
+
+}
+
+.img-div {
+    text-align: center;
+}
+
+.img-fluid {
+    z-index:100;
+    width: 1350px;
+    height: 700px;
+}
+
+.card {
+    width: 18rem;
+}
+
+.btn {
+    width: 150px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: greenyellow;
+}
+
+.card-div {
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 10px;
+}
+
+.carousel {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.divs-row {
+    display: flex;
+}
+
+.div-p {
+    position: absolute;
+    top: 1310px;
+    font-size: 30px;
+    margin-right: 350px;
+    margin-left: 15px;
+    margin-top: 80px;
+    text-align: center;
+    --bs-border-opacity: 0.5;
+    border-color: rgba(var(--bs-success-rgb), var(--bs-border-opacity)) !important;
+}
+
+.object-fit img{
+    width: 200px;
+}
+
+.object-fit {
+    position: absolute;
+    margin-top: 1400px;
+    margin-left: 10px;
+}
+
+.title {
+    position: absolute;
+    font-size: 50px;
+    top: 1500px;
+    margin-left: 500px;
+    margin-top: 100px;
+}

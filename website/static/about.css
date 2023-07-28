@@ -1,0 +1,27 @@
+.border {
+    margin-top: 150px;
+    margin-left: 40px;
+    text-align: center;
+    margin-right: 10px;
+    --bs-border-opacity: 0.2;
+    border-radius: 5px;
+    mso-border-shadow: yes;
+}
+
+.about-img {
+    margin-top: 100px;
+}
+
+.about-div {
+    font-size: 30px;
+    display: flex;
+    color: white;
+    font-family: Arial;
+    opacity: 0.92;
+}
+
+.title {
+    font-family:Arial;
+    font-size: 50px;
+    color: greenyellow
+}

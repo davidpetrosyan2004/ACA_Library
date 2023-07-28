@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='card.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="parent">
+    {% for row, copybook in enumerate(user.card) %}
+        <div style="{% if row is divisibleby 4 %} flex-basis: 100%; display: flex {% endif %}"></div>
+            <div class="card">
+                <a href="books/{{ copybook.book.title }}/{{ copybook.id }}"><img src="{{ copybook.book.image_file }}" class="card-img-top" alt="..." onclick=""></a>
+            </div>
+    {% endfor %}
+    </div>
+{% endblock %}
